@@ -1,0 +1,142 @@
+header {
+  padding: 15px 0;
+  background-color: darkmagenta;
+  margin-bottom: 20px;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+header nav a {
+  color: #fff;
+  display: inline-block;
+  padding: 7px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  background-color: #fff;
+  color: darkmagenta;
+}
+
+header nav a.active {
+  background-color: #eee;
+  color: #000;
+}
+
+
+/* Hamburger hidden on desktop */
+.hamburger {
+  display: none;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 768px) {
+
+  header .container {
+    position: relative;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    width: 42px;
+    height: 42px;
+
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 5px;
+
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+  }
+
+  /* Hide menu by default */
+  .headerRight {
+    display: none;
+    position: absolute;
+
+    top: 65px;
+    left: 0;
+    right: 0;
+
+    background-color: darkmagenta;
+    padding: 15px 20px;
+
+    z-index: 100;
+  }
+
+  /* Show menu when hamburger clicked */
+  .headerRight.showMenu {
+    display: block;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  header nav a {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  header .logo {
+    font-size: 26px;
+  }
+  header{
+    position: fixed;
+    width: 100%;
+    height: 72px;
+    top: 0;
+    left: 0;
+  }
+  body{
+    padding-top: 100px;
+  }
+}
